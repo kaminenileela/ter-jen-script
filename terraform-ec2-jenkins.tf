@@ -3,6 +3,7 @@ resource "aws_instance" "jenkins" {
     instance_type = "t3.small"
     vpc_security_group_ids = [ aws_security_group.ports.id ]
     user_data = file("jenkins.sh")
+    key_name = "C:\devops\ec2key.pem"
 }
 
 resource "aws_security_group" "ports" {
